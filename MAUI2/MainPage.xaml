@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI2.MainPage">
+    <StackLayout>
+        <ListView x:Name="itemsListViewProducts" Header="Перелік продуктів">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding Price}" Grid.Column="0" />
+                            <Label Text="{Binding CountryOfOrigin}" Grid.Column="1" />
+                            <Label Text="{Binding Name}" Grid.Column="2" />
+                            <Label Text="{Binding PackagingDate}" Grid.Column="3" />
+                            <Label Text="{Binding Description}" Grid.Column="4" />
+                            <Label Text="{Binding ExpiryDate}" Grid.Column="5" />
+                            <Label Text="{Binding Quantity}" Grid.Column="6" />
+                            <Label Text="{Binding UnitOfMeasure}" Grid.Column="7" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ListView x:Name="itemsListViewBooks" Header="Перелік книг">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding Price}" Grid.Column="0" />
+                            <Label Text="{Binding CountryOfOrigin}" Grid.Column="1" />
+                            <Label Text="{Binding Name}" Grid.Column="2" />
+                            <Label Text="{Binding Description}" Grid.Column="3" />
+                            <Label Text="{Binding ExpiryDate}" Grid.Column="4" />
+                            <Label Text="{Binding PageCount}" Grid.Column="5" />
+                            <Label Text="{Binding Publisher}" Grid.Column="6" />
+                            <Label Text="{Binding Authors}" Grid.Column="7" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Picker x:Name="ItemTypePicker" Title="Choose item type" SelectedIndexChanged="ItemTypePicker_SelectedIndexChanged">
+            <Picker.ItemsSource>
+                <x:String>Продукти</x:String>
+                <x:String>Книги</x:String>
+            </Picker.ItemsSource>
+        </Picker>
+        <Entry x:Name="PriceEntry" Placeholder="Ціна" />
+        <Entry x:Name="CountryEntry" Placeholder="Країна походження" />
+        <Entry x:Name="NameEntry" Placeholder="Назва" />
+        <Entry x:Name="QuantityEntry" Placeholder="Кількість" />
+        <Entry x:Name="UnitOfMeasureEntry" Placeholder="Одиниця виміру" />
+        <Label x:Name="PageCountLabel" Text="Кількість сторінок" IsVisible="False" />
+        <Entry x:Name="PageCountEntry" IsVisible="False" Placeholder="Кількість сторінок" />
+        <Entry x:Name="DescriptionEntry" Placeholder="Опис" />
+        <DatePicker x:Name="ExpiryDateEntry" Format="yyyy-MM-dd" />
+        <Button x:Name="AddItemButton" Text="Додати новий товар" Clicked="AddItem_Clicked" />
+    </StackLayout>
+</ContentPage>

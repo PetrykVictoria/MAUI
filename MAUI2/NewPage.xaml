@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI2.NewPage">
+    <StackLayout>
+        <Picker x:Name="ItemTypePicker">
+            <Picker.Title>Choose item type</Picker.Title>
+            <Picker.ItemsSource>
+                <x:String>Продукти</x:String>
+                <x:String>Книги</x:String>
+            </Picker.ItemsSource>
+        </Picker>
+        <Entry x:Name="PriceEntry" Placeholder="Ціна" />
+        <Entry x:Name="CountryEntry" Placeholder="Країна походження" />
+        <Entry x:Name="NameEntry" Placeholder="Назва" />
+        <Label Text="Опис" />
+        <Editor x:Name="DescriptionEntry" Placeholder="Опис" />
+        <Label Text="Дата закінчення терміну дії" />
+        <DatePicker Format="yyyy-MM-dd" x:Name="ExpiryDateEntry" />
+        <Entry x:Name="QuantityEntry" Placeholder="Кількість" />
+        <Entry x:Name="UnitOfMeasureEntry" Placeholder="Одиниця виміру" />
+        <Label Text="Кількість сторінок" />
+        <Entry x:Name="PageCountEntry" Placeholder="Кількість сторінок" />
+        <Label Text="Видавець" />
+        <Entry x:Name="PublisherEntry" Placeholder="Видавець" />
+        <Label Text="Автори" />
+        <Entry x:Name="AuthorsEntry" Placeholder="Автори" />
+
+        <Button Text="Add Item" Clicked="AddItem_Clicked" />
+    </StackLayout>
+</ContentPage>
